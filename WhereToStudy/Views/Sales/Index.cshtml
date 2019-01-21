@@ -1,0 +1,77 @@
+﻿@using Warehouse.ViewModels
+@model Warehouse.ViewModels.SaleViewModel
+
+<div style="width:900px;">
+
+    @using (Ajax.BeginForm("AddClient", "Sales", new AjaxOptions { HttpMethod = "Post", UpdateTargetId = "view", InsertionMode = InsertionMode.Replace }))
+    {
+        <div class="form-group">
+            <div class="">
+                <input type="submit" value="Добави клиент от номенклатурата" aria-hidden="true" />
+            </div>
+        </div>
+    }
+
+    <div style="float:left; width: 600px;">
+        <form action="/Sales/Index" method="post">
+            <div id="itemsList">
+                @if (Model.Items.Count > 0)
+                {
+                    <h3>Въведете артикулите за продажба: </h3>
+                }
+
+                @for (int i = 0; i < Model.Items.Count; i++)
+                {
+                    <div class="itemRow">
+                        @Html.DropDownList("Items[" + i + "].Name", Model.Items[i].ItemsTypeSelectListItems, htmlAttributes: new { @class = "itemName" })
+                        @Html.TextBoxFor(model => Model.Items[i].Quantity, htmlAttributes: new { @class = "quantity" })
+                        <a href="javascript:void(0);" class="remRow">Премахни</a>
+                    </div>
+                    <br/>
+                }
+            </div>
+            <p>
+                <a href="javascript:void(0);" class="addRow">Добави нова стока</a>
+            </p>
+            <p>
+                <input type="submit" name="btnSubmit" value="Добави в количката" />
+            </p>
+        </form>
+
+    </div>
+    <div style="float:right; width:300px; overflow-x:auto; position:relative; height:400px;" id="view">
+    </div>
+</div>
+
+
+<script type="text/javascript" src="../../Scripts/jquery-1.10.2.min.js"></script>
+<script type="text/javascript">
+
+$(document).ready(function () {
+
+    $(".addRow").click(function () {
+
+        var rowCount = $('.itemRow').length;
+        $("#itemsList").append('<div class="itemRow"><select name="Items[' + rowCount + '].Name" class="itemName" >@foreach (SelectListItem item in new Item().ItemsTypeSelectListItems)
+        {<option value="@item.Value" >@item.Text</option>}</select><input type="text" name="Items[' + rowCount + '].Quantity" class="quantity"/><a href="javascript:void(0);" class="remRow">Премахни</a></div></div> <br/>');
+    });
+
+    $("#itemsList").on('click', '.remRow', function () {
+
+        $(this).closest('.itemRow').remove();
+
+        $('.itemName').each(function (index) {
+            $(this).attr('name', 'Items[' + index + '].Name');
+        });
+
+        $('.itemQuantity').each(function (index) {
+            $(this).attr('name', 'Items[' + index + '].Quantity');
+        });    
+
+        $('.quantity').each(function (index) {
+            $(this).attr('name', 'Items[' + index + '].Quantity');
+        });
+    })
+});
+
+</script>

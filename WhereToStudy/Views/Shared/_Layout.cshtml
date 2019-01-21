@@ -1,0 +1,167 @@
+﻿@using Warehouse.vModel
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+
+</head>
+<body>
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+
+            </div>
+            <div id="mySidenav" class="sidenav">
+
+                @* <a href="#" id="contact"></a>*@
+                <a href="@Url.Action("Index", "Home")" id="about">Начало</a>
+                <a href="@Url.Action("ClientsReport", "ClientReport")" id="blog">Справка партньори</a>
+                <a href="@Url.Action("Index", "ClientReport")" id="projects">Справка продажба по партньори</a>
+                <a href="@Url.Action("Index", "DeliveriesReport")" id="contact">Справка по доставки</a>
+                <a href="@Url.Action("Items", "ItemsReport")" id="con">Справка по продажби</a>
+                <a href="@Url.Action("ItemsSaleReport", "ItemsReport")" id="conn">Справка по продажби по артикул</a>
+                <a href="@Url.Action("ItemsDeliveries", "DeliveriesReport")" id="con3">Справка по доставки по артикул</a>
+
+            </div>
+
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li> </li>
+                    <li>@Html.ActionLink("Продажба", "Index", "Sales")</li>
+                    <li>@Html.ActionLink("Доставка", "Index", "Deliveries")</li>
+                    <li>@Html.ActionLink("Наличност", "Index", "Availability")</li>
+
+
+                    <li class="dropdown">
+                        @if (User != null && User.Identity.IsAuthenticated && User.IsAdmin)
+                        {
+                            <a class="dropdown-toggle" role="button" aria-expanded="false" href="#" data-toggle="dropdown">Добави<span class="caret"></span></a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li>@Html.ActionLink("Категория", "AddType", "AddEditDelete")</li>
+                                <li>@Html.ActionLink("Артикул", "AddBook", "AddEditDelete")</li>
+                                <li>@Html.ActionLink("Клиент", "AddClient", "AddEditDelete")</li>
+                                <li>@Html.ActionLink("Група", "AddGroup", "AddEditDelete")</li>
+                                <li>@Html.ActionLink("Тип на плащане", "AddPaymentType", "AddEditDelete")</li>
+                                <li>@Html.ActionLink("Тип на операция", "AddOperationType", "AddEditDelete")</li>
+                            </ul>
+                        }
+
+                    <li class="dropdown">
+                        @if (User != null && User.Identity.IsAuthenticated && User.IsAdmin)
+                        {
+                            <a class="dropdown-toggle" role="button" aria-expanded="false" href="#" data-toggle="dropdown">Редактирай\Премахни<span class="caret"></span></a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li>@Html.ActionLink("Категория", "DeleteType", "AddEditDelete")</li>
+                                <li>@Html.ActionLink("Артикул", "DeleteBook", "AddEditDelete")</li>
+                                <li>@Html.ActionLink("Клиент", "DeleteClient", "AddEditDelete")</li>
+                                <li>@Html.ActionLink("Група", "DeleteGroup", "AddEditDelete")</li>
+                                <li>@Html.ActionLink("Тип на плащане", "DeletePaymentType", "AddEditDelete")</li>
+                                <li>@Html.ActionLink("Тип на операция", "DeleteOperationType", "AddEditDelete")</li>
+                            </ul>
+
+                        <li>@Html.ActionLink("Потребители", "EditUserRoles", "User")</li>
+                    }
+
+                        @if (User != null && User.Identity.IsAuthenticated)
+                        {
+                            <li>@Html.ActionLink("Моят профил", "Index", "Profile")</li>
+                            <li>@Html.ActionLink("Изход", "Logout", "User")</li>
+                        }
+                        else
+                        {
+                            <li>@Html.ActionLink("Вход", "Login", "User")</li>
+                            <li>@Html.ActionLink("Регистрация", "Registration", "User")</li>
+                        }
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>@{Html.RenderAction("CartSummary", "ShoppingCart");}</li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="container body-content">
+
+            <div id="page-content-wrapper">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            @RenderBody()
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr />
+            <footer>
+                <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+            </footer>
+        </div>
+        @Scripts.Render("~/bundles/jquery")
+        @Scripts.Render("~/bundles/bootstrap")
+        @Scripts.Render("~/bundles/custom")
+        @RenderSection("scripts", required: false)
+
+        <script>
+            $("#menu-toggle").click(function (e) {
+                e.preventDefault();
+                $("#wrapper").toggleClass("toggled");
+            });
+        </script>
+    </body>
+</html>
+
+
+<style>
+    #mySidenav a {
+        position: absolute; /* Position them relative to the browser window */
+        left: -120px; /* Position them outside of the screen */
+        transition: 0.3s; /* Add transition on hover */
+        padding: 15px; /* 15px padding */
+        width: 150px; /* Set a specific width */
+        text-decoration: none; /* Remove underline */
+        font-size: 17px; /* Increase font size */
+        color: white; /* White text color */
+        border-radius: 0 5px 5px 0; /* Rounded corners on the top right and bottom right side */
+    }
+
+        #mySidenav a:hover {
+            left: 0; /* On mouse-over, make the elements appear as they should */
+        }
+
+    /* The about link: 20px from the top with a green background */
+    #about {
+        top: 20px;
+        background-color: #4CAF50;
+    }
+
+    #blog {
+        top: 70px;
+        background-color: #2196F3; /* Blue */
+    }
+
+    #projects {
+        top: 135px;
+        background-color: #f44336; /* Red */
+    }
+
+    #contact {
+        top: 220px;
+        background-color: #555 /* Light Black */
+    }
+    #con {
+        top: 285px;
+        background-color: #cc9900 /* Light Black */
+    }
+    #conn {
+        top: 350px;
+        background-color: #800000 /* Light Black */
+    }
+    #con3 {
+        top: 440px;
+        background-color: #cc6600 /* Light Black */
+    }
+</style>

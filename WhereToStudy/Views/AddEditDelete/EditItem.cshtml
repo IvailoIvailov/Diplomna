@@ -1,0 +1,72 @@
+﻿@model Warehouse.vModel.Item
+@{
+    ViewBag.Title = "EditItem";
+}
+
+<h2>Редактирай артикул</h2>
+
+@using (Html.BeginForm())
+{
+<div style="width:900px;margin-bottom:10px;">
+    <div style="float:left; width: 400px;">
+        @Html.HiddenFor(m => m.Id)
+
+        <div class="form-group">
+            @Html.LabelFor(m => m.Name, htmlAttributes: new { @class = "custom-class-for-label" })
+            @Html.TextBoxFor(m => m.Name, htmlAttributes: new { @class = "custom-class-for-width" })
+        </div>
+        <br />
+        <div class="form-group">
+            @Html.LabelFor(m => m.Code, htmlAttributes: new { @class = "custom-class-for-label" })
+            @Html.TextBoxFor(m => m.Code, htmlAttributes: new { @class = "custom-class-for-width" })
+        </div>
+        <br />
+        <div>
+            @Html.Label("Категория: ", htmlAttributes: new { @class = "custom-class-for-label" })
+            @Html.DropDownListFor(m => m.TypeId, new SelectList(new Warehouse.vServices.AddEditDeleteService().GetTypes(), "Id", "Name"), "Избери", htmlAttributes: new { @class = "custom-class-for-width" })
+        </div>
+        <br />
+        <div class="form-group">
+            @Html.LabelFor(m => m.Quantity, htmlAttributes: new { @class = "custom-class-for-label" })
+            @Html.TextBoxFor(m => m.Quantity, htmlAttributes: new { @class = "custom-class-for-width" })
+        </div>
+        <br />
+    </div>
+
+    <div style="float:right; width: 400px;">
+        <div class="form-group">
+            @Html.LabelFor(m => m.Price, htmlAttributes: new { @class = "custom-class-for-label" })
+            @Html.TextBoxFor(m => m.Price, htmlAttributes: new { @class = "custom-class-for-width" })
+        </div>
+        <br />
+        <div class="form-group">
+            @Html.LabelFor(m => m.SalePrice, htmlAttributes: new { @class = "custom-class-for-label" })
+            @Html.TextBoxFor(m => m.SalePrice, htmlAttributes: new { @class = "custom-class-for-width" })
+        </div>
+        <br />
+        <div>
+            @Html.Label("Група", htmlAttributes: new { @class = "custom-class-for-label" })
+            @Html.DropDownListFor(m => m.GroupId, new SelectList(new Warehouse.vServices.AddEditDeleteService().GetGroups(), "Id", "Name"), "Избери", htmlAttributes: new { @class = "custom-class-for-width" })
+        </div>
+        <br />
+    </div>
+    <div>
+        <input class="col-lg-offset-9" type="submit" value=Редактирай />
+    </div>
+</div>
+}
+
+
+
+<style>
+    .custom-class-for-width {
+        width: 50%;
+        max-width: 50%;
+    }
+</style>
+<style>
+    .custom-class-for-label {
+        width: 40%;
+        font-size:16px;
+    }
+</style>

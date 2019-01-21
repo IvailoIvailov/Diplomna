@@ -1,0 +1,43 @@
+﻿@model Warehouse.vModel.OperationType
+@{
+    ViewBag.Title = "EditOperationType";
+}
+
+<h2>Редактирай тип на операция</h2>
+@using (Html.BeginForm())
+{
+    <div style="width:900px;">
+        <fieldset>
+            @Html.HiddenFor(m => m.Id)
+
+            <div class="form-group">
+                <div>
+                    @Html.LabelFor(m => m.Name, htmlAttributes: new { @class = "custom-class-for-label" })
+                </div>
+                <div>
+                    @Html.TextBoxFor(m => m.Name, htmlAttributes: new { @class = "custom-class-for-width" })
+                </div>
+            </div>
+            <br />
+
+            <div>
+                <input class="col-lg-10" type="submit" value=Редактирай />
+            </div>
+        </fieldset>
+    </div>
+
+}
+<style>
+    .custom-class-for-width {
+        width: 55%;
+        height: 20%;
+        max-height: 20%;
+        max-width: 55%;
+    }
+</style>
+<style>
+    .custom-class-for-label {
+        font-size: 20px;
+    }
+</style>
+

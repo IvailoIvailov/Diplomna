@@ -1,0 +1,81 @@
+﻿@model Warehouse.vModel.Client
+@{
+    ViewBag.Title = "AddClient";
+}
+
+<h2>Добави клиент</h2>
+@using (Html.BeginForm())
+{
+    <div style="width:900px;">
+        <fieldset>
+            @Html.HiddenFor(m => m.Id)
+
+            <div style="float:left; width: 500px;">
+                <div class="editor-label">@Html.LabelFor(s => s.Name)</div>
+                <div class="editor-field">
+                    <input class="form-control"
+                           id="Name"
+                           name="Name"
+                           type="text"
+                           placeholder="Име" />
+                    @Html.ValidationMessageFor(s => s.Name)
+                </div>
+                <br />
+                <div class="editor-label">@Html.LabelFor(s => s.Bulstat)</div>
+                <div class="editor-field">
+                    <input class="form-control"
+                           id="Bulstat"
+                           name="Bulstat"
+                           type="text"
+                           placeholder="Булстат" />
+                    @Html.ValidationMessageFor(s => s.Bulstat)
+                </div>
+                <br />
+                <div class="editor-label">@Html.LabelFor(s => s.Code)</div>
+                <div class="editor-field">
+                    <input class="form-control"
+                           id="Code"
+                           name="Code"
+                           type="text"
+                           placeholder="Код" />
+                    @Html.ValidationMessageFor(s => s.Code)
+                </div>
+                <br />
+                <div class="editor-label">@Html.LabelFor(s => s.Address)</div>
+                <div class="editor-field">
+                    <input class="form-control"
+                           id="Address"
+                           name="Address"
+                           type="text"
+                           placeholder="Адрес" />
+                    @Html.ValidationMessageFor(s => s.Address)
+                </div>
+                <br />
+                <div class="editor-label">@Html.LabelFor(s => s.Phone)</div>
+                <div class="editor-field">
+                    <input class="form-control"
+                           id="Phone"
+                           name="Phone"
+                           type="text"
+                           placeholder="Телефон" />
+                    @Html.ValidationMessageFor(s => s.Phone)
+                </div>
+                <br />
+                <div class="editor-label">@Html.LabelFor(s => s.Faks)</div>
+                <div class="editor-field">
+                    <input class="form-control"
+                           id="Faks"
+                           name="Faks"
+                           type="text"
+                           placeholder="Факс" />
+                    @Html.ValidationMessageFor(s => s.Faks)
+                </div>
+                <br />
+                <div>
+                    <input class="col-lg-10" type="submit" value=Запази />
+                </div>
+            </div>
+        </fieldset>
+    </div>
+
+}

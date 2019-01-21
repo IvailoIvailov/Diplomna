@@ -1,0 +1,64 @@
+﻿@using Warehouse.ViewModels
+@model Warehouse.ViewModels.EmployeeViewModel
+
+<form action="/Deliveries/Create" method="post">
+
+    <p>
+        @Html.LabelFor(model => model.Name)
+        @Html.TextBoxFor(model => model.Name)
+    </p>
+
+    <div id="phoneList">
+        @if (Model.Phones.Count > 0)
+        {
+            <span>Phone Type Phone Number</span>
+        }
+
+        @for (int i = 0; i < Model.Phones.Count; i++)
+        {
+            <div class="phoneRow">
+                @Html.DropDownList("Phones[" + i + "].Type", Model.Phones[i].PhoneTypeSelectListItems, new { @class = "phoneType" })
+                @Html.TextBoxFor(model => Model.Phones[i].Number, new { @class = "phoneNumber" })
+                <a href="javascript:void(0);" class="remRow">Remove</a>
+            </div>
+        }
+    </div>
+
+    <p>
+        <a href="javascript:void(0);" class="addRow">Add row</a>
+    </p>
+
+    <p>
+        <input type="submit" name="btnSubmit" value="Create new employee" />
+    </p>
+
+</form>
+
+
+
+<script type="text/javascript" src="../../Scripts/jquery-1.10.2.min.js"></script>
+<script type="text/javascript">
+
+$(document).ready(function () {
+
+    $(".addRow").click(function () {
+
+        var rowCount = $('.phoneRow').length;
+        $("#phoneList").append('<div class="phoneRow"><select name="Phones[' + rowCount + '].Type" class="phoneType">@foreach (SelectListItem item in new Phone().PhoneTypeSelectListItems){<option value="@item.Value">@item.Text</option>}</select><input type="text" name="Phones[' + rowCount + '].Number" class="phoneNumber" /><a href="javascript:void(0);" class="remRow">Remove</a></div>');
+    });
+
+    $("#phoneList").on('click', '.remRow', function () {
+
+        $(this).closest('.phoneRow').remove();
+
+        $('.phoneType').each(function (index) {
+            $(this).attr('name', 'Phones[' + index + '].Type');
+        });
+
+        $('.phoneNumber').each(function (index) {
+            $(this).attr('name', 'Phones[' + index + '].Number');
+        });
+    })
+});
+
+</script>

@@ -1,0 +1,162 @@
+﻿@model Warehouse.vModel.Item
+
+<h2>Добави артикул</h2>
+
+
+
+
+@using (Html.BeginForm())
+{
+
+    <div style="width:900px;margin-bottom:10px;">
+        @Html.HiddenFor(m => m.Id)
+
+
+        <div style="width:400px;margin-bottom:10px;float:left;">
+
+            <div class="editor-label">
+                @Html.Label("Категория: ")
+            </div>
+            <div class="editor-field">
+                @Html.DropDownListFor(m => m.TypeId, new SelectList(new Warehouse.vServices.AddEditDeleteService().GetTypes(), "Id", "Name"), "Избери", htmlAttributes: new { @class = "custom-class-for-width" })
+            </div>
+            <br />
+            <div class="editor-label">@Html.LabelFor(s => s.Name)</div>
+            <div class="editor-field">
+                <input class="form-control"
+                       id="Name"
+                       name="Name"
+                       type="text"
+                       placeholder="Име" />
+                @Html.ValidationMessageFor(s => s.Name)
+            </div>
+            <br />
+            <div class="editor-label">@Html.LabelFor(s => s.Code)</div>
+            <div class="editor-field">
+                <input class="form-control"
+                       id="Code"
+                       name="Code"
+                       type="text"
+                       placeholder="Име" />
+                @Html.ValidationMessageFor(s => s.Code)
+            </div>
+            <br />
+        </div>
+        <div style="float:right; width: 400px;">
+            <div class="editor-label">
+                @Html.Label("Група")
+            </div>
+            <div class="editor-field">
+                @Html.DropDownListFor(m => m.GroupId, new SelectList(new Warehouse.vServices.AddEditDeleteService().GetGroups(), "Id", "Name"), "Избери", htmlAttributes: new { @class = "custom-class-for-width" })
+            </div>
+            <br />
+            <div class="editor-label">@Html.LabelFor(s => s.Price)</div>
+            <div class="editor-field">
+                <input class="form-control"
+                       id="Price"
+                       name="Price"
+                       type="text"
+                       placeholder="Цена" />
+            </div>
+            <br />
+            <div class="editor-label">@Html.LabelFor(s => s.SalePrice)</div>
+            <div class="editor-field">
+                <input class="form-control"
+                       id="SalePrice"
+                       name="SalePrice"
+                       type="text"
+                       placeholder="Продажна цена" />
+            </div>
+            <br />
+
+            <div class="editor-label">@Html.LabelFor(s => s.Quantity)</div>
+            <div class="editor-field">
+                <input class="form-control"
+                       id="Quantity"
+                       name="Quantity"
+                       type="text"
+                       placeholder="Количество" />
+                @Html.ValidationMessageFor(s => s.Quantity)
+            </div>
+
+            <br />
+
+        </div>
+        <br />
+
+        <div style="margin-top:20px;">
+            <input type="submit" value="Запази" style="width:400px; margin-top:30px;" />
+        </div>
+    </div>
+
+}
+
+
+@using (Html.BeginForm("UploadImage", "AddEditDelete"))
+{
+    @Html.AntiForgeryToken()
+    <br>
+    <div>
+        <input type="file" name="files" /><br>
+        <input type="submit" value="Качи снимката" />
+    </div>
+}
+
+<br />
+<div class="progress progress-striped">
+    <div class="progress-bar progress-bar-success">0%</div>
+</div>
+
+
+<script src="~/Scripts/jquery-1.8.2.min.js"></script>
+<script src="~/Scripts/jquery.unobtrusive-ajax.js"></script>
+
+<style>
+    .custom-class-for-width {
+        width: 55%;
+        height: 20%;
+        max-height: 20%;
+        max-width: 55%;
+    }
+</style>
+<style>
+    .custom-class-for-label {
+        font-size: 20px;
+    }
+</style>
+
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.js"></script>
+<script src="http://malsup.github.com/jquery.form.js"></script>
+
+<script>
+    (function () {
+
+        var bar = $('.progress-bar');
+        var percent = $('.progress-bar');
+        var status = $('#status');
+
+        $('form').ajaxForm({
+            beforeSend: function () {
+                status.empty();
+                var percentVal = '0%';
+                bar.width(percentVal)
+                percent.html(percentVal);
+            },
+            uploadProgress: function (event, position, total, percentComplete) {
+                var percentVal = percentComplete + '%';
+                bar.width(percentVal)
+                percent.html(percentVal);
+            },
+            success: function () {
+                var percentVal = '100%';
+                bar.width(percentVal)
+                percent.html(percentVal);
+            },
+            complete: function (xhr) {
+                status.html(xhr.responseText);
+            }
+        });
+
+    })();
+</script>

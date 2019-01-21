@@ -1,0 +1,45 @@
+﻿@using Warehouse.vModel
+@using Warehouse.Controllers
+@using System.Configuration
+@model IEnumerable<Warehouse.vModel.Item>
+
+@{
+    ViewBag.Title = "Cart";
+}
+
+<h3>Количка</h3>
+
+@using (Html.BeginForm("Update", "ShoppingCart", FormMethod.Post))
+{
+    <table cellpadding="2" cellspacing="2" border="1">
+        <tr>
+            <th>Опция</th>
+            <th>Наименование</th>
+            <th>Цена</th>
+            <th>Количество <input type="submit" value="Update"></th>
+            <th>Общо</th>
+        </tr>
+        @{
+            decimal s = 0;
+            int index = 1;
+        }
+
+        @foreach (Item item in (List<Item>)Session["cart"])
+        {
+            s = s + item.SalePrice * item.Quantity;
+            <tr>
+                <td>@Html.ActionLink("Премахни", "Delete", "ShoppingCart", new { id = item.Id }, null)</td>
+                <td>@item.Name</td>
+                <td>@item.SalePrice</td>
+                <td><input type="text" name="quantity" value="@item.Quantity"></td>
+                <td>
+                    @(item.SalePrice * item.Quantity)
+                    @{ index++;}
+                </td>
+            </tr>
+        }
+    </table>
+}
+<br />
+@Html.ActionLink("Продължи с пазаруването", "Index", "Availability")
+@Html.ActionLink("Купи", "Checkout", "ShoppingCart")

@@ -1,0 +1,34 @@
+﻿@model Warehouse.vModel.Types
+@{
+    ViewBag.Title = "AddType";
+}
+
+<h2>Добави категория</h2>
+@using (Html.BeginForm())
+{
+    <div style="width:900px;">
+        <fieldset>
+            @Html.HiddenFor(m => m.Id)
+
+            <div style="float:left; width: 500px;">
+                <div class="editor-label">@Html.LabelFor(s => s.Name)</div>
+                <div class="editor-field">
+                    <input class="form-control"
+                           id="Name"
+                           name="Name"
+                           type="text"
+                           placeholder="Наименование" />
+                    @Html.ValidationMessageFor(s => s.Name)
+
+                    <br />
+
+                </div>
+                <div >
+                    <input class="col-lg-10" type="submit" value=Запази />
+                </div>
+            </div>
+        </fieldset>
+    </div>
+
+}
+

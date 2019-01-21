@@ -1,0 +1,474 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="srtLectures" xml:space="preserve">
+    <value>Лекции</value>
+  </data>
+  <data name="strAbout" xml:space="preserve">
+    <value>За нас</value>
+  </data>
+  <data name="strAddCourse" xml:space="preserve">
+    <value>Добави курс</value>
+  </data>
+  <data name="strAddLecture" xml:space="preserve">
+    <value>Добави лекция</value>
+  </data>
+  <data name="strBulgarian" xml:space="preserve">
+    <value>Бг</value>
+  </data>
+  <data name="strChooseCourseFromList" xml:space="preserve">
+    <value>Изберете курс от списъка:</value>
+  </data>
+  <data name="strConfirmPassword" xml:space="preserve">
+    <value>Потвърдете парола.</value>
+  </data>
+  <data name="strContact" xml:space="preserve">
+    <value>Контакти</value>
+  </data>
+  <data name="strCourse" xml:space="preserve">
+    <value>Курс : </value>
+  </data>
+  <data name="strCourseContent" xml:space="preserve">
+    <value>Съдържание на курса</value>
+  </data>
+  <data name="strCourseName" xml:space="preserve">
+    <value>Име на курса</value>
+  </data>
+  <data name="strCourses" xml:space="preserve">
+    <value>Курсове</value>
+  </data>
+  <data name="strDate" xml:space="preserve">
+    <value>Дата</value>
+  </data>
+  <data name="strDelete" xml:space="preserve">
+    <value>Изтрии</value>
+  </data>
+  <data name="strEdit" xml:space="preserve">
+    <value>Редактирай</value>
+  </data>
+  <data name="strEditCourse" xml:space="preserve">
+    <value>Редактирай курса</value>
+  </data>
+  <data name="strELearningSystem" xml:space="preserve">
+    <value>Електронна система за обучение</value>
+  </data>
+  <data name="strEnglish" xml:space="preserve">
+    <value>Анг</value>
+  </data>
+  <data name="strExit" xml:space="preserve">
+    <value>Изход</value>
+  </data>
+  <data name="strFullName" xml:space="preserve">
+    <value>Име и фамилия</value>
+  </data>
+  <data name="strHello" xml:space="preserve">
+    <value>Здравейте, </value>
+  </data>
+  <data name="strHome" xml:space="preserve">
+    <value>Начало</value>
+  </data>
+  <data name="strInsertCourseDescription" xml:space="preserve">
+    <value>Въведете кратко описание на курса</value>
+  </data>
+  <data name="strInsertLectureDescription" xml:space="preserve">
+    <value>Въведете съдържанието на лекцията</value>
+  </data>
+  <data name="strLectureDescription" xml:space="preserve">
+    <value>Съдържание на лекцията</value>
+  </data>
+  <data name="strLectureName" xml:space="preserve">
+    <value>Име на лекцията</value>
+  </data>
+  <data name="strLectures" xml:space="preserve">
+    <value>Лекции</value>
+  </data>
+  <data name="strListOfLectures" xml:space="preserve">
+    <value>Списък с лекции</value>
+  </data>
+  <data name="strLogin" xml:space="preserve">
+    <value>Вход</value>
+  </data>
+  <data name="strMail" xml:space="preserve">
+    <value>Имейл</value>
+  </data>
+  <data name="strName" xml:space="preserve">
+    <value>Име</value>
+  </data>
+  <data name="strPassword" xml:space="preserve">
+    <value>Парола</value>
+  </data>
+  <data name="strPasswordError" xml:space="preserve">
+    <value>Не сте въвели парола.</value>
+  </data>
+  <data name="strPasswordLengthValidation" xml:space="preserve">
+    <value>Паролата трябва да е минимум 5 символа</value>
+  </data>
+  <data name="strRegistration" xml:space="preserve">
+    <value>Регистрация</value>
+  </data>
+  <data name="strResults" xml:space="preserve">
+    <value>Резултати</value>
+  </data>
+  <data name="strSave" xml:space="preserve">
+    <value>Запази</value>
+  </data>
+  <data name="strSortBy" xml:space="preserve">
+    <value>Сортирай по : </value>
+  </data>
+  <data name="strTest" xml:space="preserve">
+    <value>Тест</value>
+  </data>
+  <data name="strTests" xml:space="preserve">
+    <value>Тестове</value>
+  </data>
+  <data name="strUserName" xml:space="preserve">
+    <value>Потребителско име</value>
+  </data>
+  <data name="strUserNameError" xml:space="preserve">
+    <value>Не сте въвели потребителско име.</value>
+  </data>
+  <data name="strWrongUserNameOrPassword" xml:space="preserve">
+    <value>Потребителското име и/или паролата е грешно.</value>
+  </data>
+  <data name="strAdd" xml:space="preserve">
+    <value>Добави</value>
+  </data>
+  <data name="strCheck" xml:space="preserve">
+    <value>Провери</value>
+  </data>
+  <data name="strCorrectAnswers" xml:space="preserve">
+    <value>Верни отговори:</value>
+  </data>
+  <data name="strForUs" xml:space="preserve">
+    <value>За нас</value>
+  </data>
+  <data name="strInformationAbout" xml:space="preserve">
+    <value>Това е електронна система за обучение. В нея са включени различни обучителни курсове и съответните им лекции.</value>
+  </data>
+  <data name="strInformationAbout2" xml:space="preserve">
+    <value>След преминаването на даден материал може да тествате знанията си в раздел "Тестове".</value>
+  </data>
+  <data name="strInformationHome" xml:space="preserve">
+    <value>Системата ви позволява да се обучавате в различни сфери. Може да избереш най-подходящия курс за теб и да започнеш веднага.</value>
+  </data>
+  <data name="strInformationHome2" xml:space="preserve">
+    <value>Не сте избрали към кой курс искате да участвате? Прегледате всички курсове с възможните им лекции. Можете лесно да го направите от тук.</value>
+  </data>
+  <data name="strLearnMore" xml:space="preserve">
+    <value>Научи повече</value>
+  </data>
+  <data name="strPossibilities" xml:space="preserve">
+    <value>Възможности</value>
+  </data>
+  <data name="strProcent" xml:space="preserve">
+    <value>Процент:</value>
+  </data>
+  <data name="strProfileLogin" xml:space="preserve">
+    <value>Влез в профила си</value>
+  </data>
+  <data name="strRegister" xml:space="preserve">
+    <value>Регистрирай</value>
+  </data>
+  <data name="strStart" xml:space="preserve">
+    <value>Започнете</value>
+  </data>
+  <data name="strWelcome" xml:space="preserve">
+    <value>Добре дошли в електронната система за обучение и тестове</value>
+  </data>
+  <data name="strWrongAnswers" xml:space="preserve">
+    <value>Грешни отговори:</value>
+  </data>
+  <data name="strFilter" xml:space="preserve">
+    <value>Филтрирай</value>
+  </data>
+  <data name="strAddFaculty" xml:space="preserve">
+    <value>Добави факултет</value>
+  </data>
+  <data name="strAddSpecialty" xml:space="preserve">
+    <value>Добави специалност</value>
+  </data>
+  <data name="strAllInformation" xml:space="preserve">
+    <value>Обща информация</value>
+  </data>
+  <data name="strChoose" xml:space="preserve">
+    <value>Избери ... </value>
+  </data>
+  <data name="strCity" xml:space="preserve">
+    <value>Град</value>
+  </data>
+  <data name="strCountry" xml:space="preserve">
+    <value>Държава</value>
+  </data>
+  <data name="strEducationForm" xml:space="preserve">
+    <value>Форма на обучението</value>
+  </data>
+  <data name="strEducationLanguage" xml:space="preserve">
+    <value>Език на преподаване</value>
+  </data>
+  <data name="strFaculties" xml:space="preserve">
+    <value>Факултети</value>
+  </data>
+  <data name="strFaculty" xml:space="preserve">
+    <value>Факултет</value>
+  </data>
+  <data name="strInformation" xml:space="preserve">
+    <value>Информация</value>
+  </data>
+  <data name="strJob" xml:space="preserve">
+    <value>Професия</value>
+  </data>
+  <data name="strLanguage" xml:space="preserve">
+    <value>Език</value>
+  </data>
+  <data name="strOks" xml:space="preserve">
+    <value>ОКС</value>
+  </data>
+  <data name="strSemTax" xml:space="preserve">
+    <value>Семестриална такса</value>
+  </data>
+  <data name="strSpecialty" xml:space="preserve">
+    <value>Специалност</value>
+  </data>
+  <data name="strSubject" xml:space="preserve">
+    <value>Предмет</value>
+  </data>
+  <data name="strTax" xml:space="preserve">
+    <value>Такса</value>
+  </data>
+  <data name="strUniversity" xml:space="preserve">
+    <value>Университет</value>
+  </data>
+  <data name="strUniversityEdit" xml:space="preserve">
+    <value>Редакция на факултет</value>
+  </data>
+  <data name="strUniversityInformation" xml:space="preserve">
+    <value>Въведете информация за университета</value>
+  </data>
+  <data name="strAddFacult" xml:space="preserve">
+    <value>Добави факултет</value>
+  </data>
+  <data name="strAddUniversity" xml:space="preserve">
+    <value>Добави университет</value>
+  </data>
+  <data name="strAdvancedSearch" xml:space="preserve">
+    <value>Разширено търсене</value>
+  </data>
+  <data name="strMyChoice" xml:space="preserve">
+    <value>Моят избор</value>
+  </data>
+  <data name="strMyProfile" xml:space="preserve">
+    <value>Моят профил</value>
+  </data>
+  <data name="strUniversities" xml:space="preserve">
+    <value>Университети</value>
+  </data>
+  <data name="strChange" xml:space="preserve">
+    <value>Промени</value>
+  </data>
+  <data name="strChooseUniversityToSpec" xml:space="preserve">
+    <value>Изберете университет, към който искате да добавите специалност:</value>
+  </data>
+  <data name="strLanguageEducation" xml:space="preserve">
+    <value>Език на преподаване</value>
+  </data>
+  <data name="strListSpecialties" xml:space="preserve">
+    <value>Списък със специалностите</value>
+  </data>
+  <data name="strTypeEducation" xml:space="preserve">
+    <value>Форма на обучение</value>
+  </data>
+  <data name="strSearchUniversity" xml:space="preserve">
+    <value>Потърси университет...</value>
+  </data>
+  <data name="strEnterSpecialtyInformation" xml:space="preserve">
+    <value>Въведете информация за специалността</value>
+  </data>
+  <data name="strAvarageSalary" xml:space="preserve">
+    <value>Средна заплата</value>
+  </data>
+  <data name="strLearnMore1Text" xml:space="preserve">
+    <value>Чудиш се коя специалност е подходяща за теб? Въведи свойте изисквания и виж коя отговаря на тях.</value>
+  </data>
+  <data name="strLearnMoreText" xml:space="preserve">
+    <value>Разгледай тук университетите и избери.</value>
+  </data>
+  <data name="strAddDiscipline" xml:space="preserve">
+    <value>Добави дисциплина</value>
+  </data>
+  <data name="strAddNewSkill" xml:space="preserve">
+    <value>Добави ново умение</value>
+  </data>
+  <data name="strCheckWhereToWork" xml:space="preserve">
+    <value>Провери къде може да се реализираш</value>
+  </data>
+  <data name="strDeleteSpecialty" xml:space="preserve">
+    <value>Изтрий специалността</value>
+  </data>
+  <data name="strDescription" xml:space="preserve">
+    <value>Описание</value>
+  </data>
+  <data name="strDiscipline" xml:space="preserve">
+    <value>Дисциплина</value>
+  </data>
+  <data name="strDisciplines" xml:space="preserve">
+    <value>Дисциплини</value>
+  </data>
+  <data name="strEditSpecialty" xml:space="preserve">
+    <value>Редактирай специалността</value>
+  </data>
+  <data name="strEnterSpecialtyDescription" xml:space="preserve">
+    <value>Въведете описание на специалността</value>
+  </data>
+  <data name="strRegisterAsNewUser" xml:space="preserve">
+    <value>Регистрирай се като нов потребител</value>
+  </data>
+  <data name="strSearch" xml:space="preserve">
+    <value>Търсене</value>
+  </data>
+  <data name="strSemester" xml:space="preserve">
+    <value>Семестър</value>
+  </data>
+  <data name="strSkill" xml:space="preserve">
+    <value>Умение</value>
+  </data>
+  <data name="strSkills" xml:space="preserve">
+    <value>Умения</value>
+  </data>
+  <data name="strSpecialties" xml:space="preserve">
+    <value>Специалности</value>
+  </data>
+  <data name="strSpecialtyDetails" xml:space="preserve">
+    <value>Детайли за специалността:</value>
+  </data>
+  <data name="strView" xml:space="preserve">
+    <value>Преглед</value>
+  </data>
+  <data name="strSearchDesiredSpecialty" xml:space="preserve">
+    <value>Потърсете желаната от вас специалност</value>
+  </data>
+  <data name="strSystemTrainingProfile" xml:space="preserve">
+    <value>Система за анализ профил обучение</value>
+  </data>
+  <data name="strChooseProfession" xml:space="preserve">
+    <value>Избери професия</value>
+  </data>
+  <data name="strRang" xml:space="preserve">
+    <value>Класация</value>
+  </data>
+</root>

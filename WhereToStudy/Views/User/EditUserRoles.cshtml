@@ -1,0 +1,23 @@
+﻿@model IEnumerable<Warehouse.vModel.User>
+@{
+    ViewBag.Title = "EditUserRoles";
+}
+
+<h2>Редактирай потребителските права</h2>
+
+@foreach (var user in Model)
+{
+<div>
+    @Html.Label(user.UserName)
+    @if (user.IsAdmin)
+    {
+        @Html.Label(" - Потребителят е администратор - ")
+        <a href="@Url.Action("EditUserRoles1", "User", new { id = user.Id}, null)">Направи обикновен потребител</a>
+    }
+    else
+    {
+        @Html.Label(" - Потребителят не е администратор - ")
+        <a href="@Url.Action("EditUserRoles", "User", new { id = user.Id}, null)" style="margin-right: 10px; margin-left:10px;">Направи администратор</a>
+    }
+</div>
+}

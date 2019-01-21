@@ -1,0 +1,116 @@
+﻿@model object
+@{
+    dynamic mod = Model;
+    var item = mod.GetType().GetProperty("item").GetValue(mod, null) as Warehouse.vModel.Item;
+
+    var base64 = Convert.ToBase64String(item.Image.Data);
+    var imgSrc = String.Format("data:image/gif;base64,{0}", base64);
+}
+
+@*<div style="height: 200px; width: 300px; margin-left: 6px; margin-top:70px;" class="col-md-4">*@
+
+    <div style="border:double;height: 150px; width: 430px; margin-top:5px;" class="col-md-4">
+        <div style="float: none; ">
+            <div style="float:left">
+                <div>
+                    @Html.Label(" Име :", htmlAttributes: new { @class = "custom-class-for-label", @style = "margin-left: 10px;" })
+                    @Html.Label(item.Name, htmlAttributes: new { @class = "custom-class-for-label" })
+                </div>
+                <div>
+                    @Html.Label(" Продажна цена :", htmlAttributes: new { @class = "custom-class-for-label", @style = "margin-left: 10px;" })
+                    @Html.Label(item.SalePrice.ToString(), htmlAttributes: new { @class = "custom-class-for-label" })
+                </div>
+                <div>
+                    @Html.Label(" Цена :", htmlAttributes: new { @class = "custom-class-for-label", @style = "margin-left: 10px;" })
+                    @Html.Label(item.Price.ToString(), htmlAttributes: new { @class = "custom-class-for-label" })
+                </div>
+                <div>
+                    @Html.Label(" Количество :", htmlAttributes: new { @class = "custom-class-for-label", @style = "margin-left: 10px;" })
+                    @Html.Label(item.Quantity.ToString(), htmlAttributes: new { @class = "custom-class-for-label" })
+                </div>
+                <div>
+                    @using (Html.BeginForm("AddToCart", "Availability"))
+                    {
+                        @Html.Hidden(item.Id.ToString())
+                        <input type="hidden" name="ItemId" value="@item.Id" />
+                        <input type="submit" value="Добави в количката" />
+                    }
+                </div>
+            </div>
+            <div style="float: right">
+
+                    <img class="thumbnail zoom" src="@imgSrc" style="height:118px;width:150px;">
+        
+            </div>
+        </div>
+    </div>
+
+
+@*</div>*@
+
+
+
+<style>
+    .custom-class-for-label {
+        font-size: 7px;
+        margin-left: 3px;
+    }
+</style>
+
+
+@*<div class="myClass" style="float: none; height: 220px; width: 600px; margin: 5px; border-style: outset">
+        <div style="float:left">
+            <input type="hidden" name="Item.Name" value="" />
+            <div>
+                @Html.Label(" Наименование :", htmlAttributes: new { @class = "custom-class-for-label", @style = "margin-left: 10px;" })
+                @Html.Label(item.Name, htmlAttributes: new { @class = "custom-class-for-label" })
+            </div>
+            <div>
+                @Html.Label(" Тип :", htmlAttributes: new { @class = "custom-class-for-label", @style = "margin-left: 10px;" })
+                @Html.Label(item.Type.Name, htmlAttributes: new { @class = "custom-class-for-label" })
+            </div>
+            <div>
+                @Html.Label(" Продажна цена :", htmlAttributes: new { @class = "custom-class-for-label", @style = "margin-left: 10px;" })
+                @Html.Label(item.SalePrice.ToString(), htmlAttributes: new { @class = "custom-class-for-label" })
+            </div>
+            <div>
+                @Html.Label(" Цена :", htmlAttributes: new { @class = "custom-class-for-label", @style = "margin-left: 10px;" })
+                @Html.Label(item.Price.ToString(), htmlAttributes: new { @class = "custom-class-for-label" })
+            </div>
+            <div>
+                @Html.Label(" Количество :", htmlAttributes: new { @class = "custom-class-for-label", @style = "margin-left: 10px;" })
+                @Html.Label(item.Quantity.ToString(), htmlAttributes: new { @class = "custom-class-for-label" })
+            </div>
+            <div>
+                @Html.Label(" Група :", htmlAttributes: new { @class = "custom-class-for-label", @style = "margin-left: 10px;" })
+                @Html.Label(item.Group.Name, htmlAttributes: new { @class = "custom-class-for-label" })
+            </div>
+            <div>
+                @Html.Label(" Код :", htmlAttributes: new { @class = "custom-class-for-label", @style = "margin-left: 10px;" })
+                @Html.Label(item.Code, htmlAttributes: new { @class = "custom-class-for-label" })
+            </div>
+            </br>
+        </div>
+        <div style="float: right">
+            <div>
+                <img src="@imgSrc" style="height:140px;width:150px;" />
+                <div style="border-style: double">
+                    @using (Html.BeginForm("AddToCart", "Availability"))
+                    {
+                        @Html.Hidden(item.Id.ToString())
+                        <input type="hidden" name="ItemId" value="@item.Id" />
+                        <input type="submit" value="Добави в количката" />
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <style>
+        .myClass {
+            border: double;
+            width: 25%;
+            height: 55%;
+        }
+    </style>*@

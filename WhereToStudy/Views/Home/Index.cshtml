@@ -1,0 +1,66 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+
+<div>
+    <h2>Онлайн складова система</h2>
+</div>
+
+<div id="mycarousel" class="carousel slide" data-ride="carousel" style="width:600px; height:230px; margin-bottom:80px">
+    <ol class="carousel-indicators">
+        <li data-target="#mycarousel" data-slide-to="0" />
+        <li data-target="#mycarousel" data-slide-to="1" class="active" />
+        <li data-target="#mycarousel" data-slide-to="2" />
+    </ol>
+    <div class="carousel-inner" role="listbox">
+        <div class="item active">
+            <img src="~/Images/shop.png" style="width:600px; height:230px;" />
+            <div class="carousel-caption">
+                <p></p>
+            </div>
+        </div>
+        <div class="item">
+            <img src="~/Images/shop1.png" style="width:600px; height:230px;" />
+            <div class="carousel-caption">
+                <p></p>
+            </div>
+        </div>
+        <div class="item">
+            <img src="~/Images/shop2.png" style="width:600px; height:230px;" />
+            <div class="carousel-caption">
+                <p></p>
+            </div>
+        </div>
+        @*<div class="item">
+            @*<img src="~/Images/education.jpg" style="width:900px; height:400px;"/>
+            <div class="carousel-caption">
+                <p></p>
+            </div>
+        </div>*@
+    </div>
+    <a class="left carousel-control" href="#mycarousel" role="button" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true" />
+        <span class="sr-only">Prev</span>
+    </a>
+    <a class="right carousel-control" href="#mycarousel" role="button" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true" />
+        <span class="sr-only">Prev</span>
+    </a>
+</div>
+
+
+
+<div class="row">
+    <div class="col-md-4">
+        <h3>Продажба</h3>
+        <p>Въведи артикули за продажба</p>
+        <p><a class="btn btn-default" href="@Url.Action("Index", "Sales")">Научи повече &raquo;</a></p>
+    </div>
+    <div class="col-md-4">
+        <h3>Доставка</h3>
+        <p>Въведи артикули за доставка</p>
+        <p><a class="btn btn-default" href="@Url.Action("Index", "Deliveries")">Научи повече &raquo;</a></p>
+    </div>
+</div>
+

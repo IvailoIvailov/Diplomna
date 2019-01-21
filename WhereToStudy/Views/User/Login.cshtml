@@ -1,0 +1,45 @@
+﻿@model Warehouse.vModel.User
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<h2>@WhereToStudy.vResources.Resource.strLogin</h2>
+@using (Html.BeginForm("Login", "User", new { ReturnUrl = ViewBag.ReturnUrl as string }, FormMethod.Post))
+{
+    <div>
+        <fieldset>
+            <div class="editor-label">@Html.LabelFor(s => s.UserName)</div>
+            <div class="editor-field">
+                @Html.ValidationMessageFor(s => s.UserName)
+                <input class="form-control"
+                       id="UserName"
+                       name="UserName"
+                       type="text"
+                       placeholder="Потребителско име"/>
+            </div>
+            <div class="editor-label">@Html.LabelFor(s => s.Password)</div>
+            <div class="editor-field">
+                <input class="form-control"
+                       id="Password"
+                       name="Password"
+                       type="password"
+                       placeholder="Парола"/>
+                @Html.ValidationMessageFor(s => s.Password)
+            </div>
+            <br></br>
+            <div>
+                <input class="col-lg-3" type="submit" value=@WhereToStudy.vResources.Resource.strSave />
+            </div>
+            <div style="float:right; height: 120px; width:400px; margin:5px; border-style:outset">
+                <p></p>
+                <div>
+                    Въведете потребителско име и парола.
+                    Ако нямате регистрация, можете лесно да се регистрирате в меню "Регистрация"
+                    или използвайки линка @Html.ActionLink(@WhereToStudy.vResources.Resource.strRegisterAsNewUser, "Registration", "User")
+                </div>
+            </div>
+        </fieldset>
+    </div>
+}

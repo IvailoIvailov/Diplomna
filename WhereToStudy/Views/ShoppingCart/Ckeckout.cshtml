@@ -1,0 +1,33 @@
+﻿@model Warehouse.vModel.Client
+
+
+@using (Html.BeginForm("saveOrder", "ShoppingCart", FormMethod.Post))
+{
+    <div>
+        <div class="col-lg-10">
+            @Html.Label("Избери клиент:", htmlAttributes: new { @class = "custom-class-for-label" })
+        </div>
+        <div class="col-lg-10">
+            @Html.DropDownListFor(m => m.Id, new SelectList(new Warehouse.vServices.AddEditDeleteService().GetClients(), "Id", "Name"), "Клиент, който не е въведен в системата", htmlAttributes: new { @class = "custom-class-for-width" })
+        </div>
+        <br></br>
+        <div class="col-md-offset-5 " style="margin-right:20px ; margin-top:20px;">
+            <input type="submit" value="Добави" aria-hidden="true" />
+        </div>
+    </div>
+}
+
+<style>
+    .custom-class-for-width {
+        width: 650px;
+    }
+</style>
+<style>
+    .custom-class-for-label {
+        font-size: 20px;
+    }
+</style>
+
+
+
+

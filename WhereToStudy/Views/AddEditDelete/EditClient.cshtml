@@ -1,0 +1,55 @@
+﻿@model Warehouse.vModel.Client
+@{
+    ViewBag.Title = "EditClient";
+}
+
+<h2>Редактирай клиент</h2>
+@using (Html.BeginForm())
+{
+    <div style="width:900px;">
+        <fieldset>
+            @Html.HiddenFor(m => m.Id)
+
+            <div class="form-group">
+
+                    @Html.LabelFor(m => m.Name, htmlAttributes: new { @class = "custom-class-for-label" })
+
+                    @Html.TextBoxFor(m => m.Name, htmlAttributes: new { @class = "custom-class-for-width" })
+
+            </div>
+            <br />
+            <div class="form-group">
+                    @Html.LabelFor(m => m.Bulstat, htmlAttributes: new { @class = "custom-class-for-label" })
+
+                    @Html.TextBoxFor(m => m.Bulstat, htmlAttributes: new { @class = "custom-class-for-width" })
+            </div>
+            <br />
+            <div class="form-group">
+
+                    @Html.LabelFor(m => m.Code, htmlAttributes: new { @class = "custom-class-for-label" })
+
+                    @Html.TextBoxFor(m => m.Code, htmlAttributes: new { @class = "custom-class-for-width" })
+            </div>
+            <br />
+            <div class="form-group">
+                    @Html.LabelFor(m => m.Address, htmlAttributes: new { @class = "custom-class-for-label" })
+                    @Html.TextBoxFor(m => m.Address, htmlAttributes: new { @class = "custom-class-for-width" })
+            </div>
+            <br />
+            <div class="form-group">
+                    @Html.LabelFor(m => m.Phone, htmlAttributes: new { @class = "custom-class-for-label" })
+                    @Html.TextBoxFor(m => m.Phone, htmlAttributes: new { @class = "custom-class-for-width" })
+            </div>
+            <br />
+            <div class="form-group">
+                @Html.LabelFor(m => m.Faks, htmlAttributes: new { @class = "custom-class-for-label" })
+                @Html.TextBoxFor(m => m.Faks, htmlAttributes: new { @class = "custom-class-for-width" })
+            </div>
+            <br />
+            <div>
+                <input class="col-lg-10" type="submit" value=Редактирай />
+            </div>
+        </fieldset>
+    </div>
+
+}
